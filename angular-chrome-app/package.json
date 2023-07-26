@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build && npm run copy:build",
-    "copy:build": "copy dist/angular-chrome-app/main*.js ../extension/main.js & copy dist/angular-chrome-app/polyfills*.js ../extension/polyfills.js & copy dist/angular-chrome-app/runtime*.js ../extension/runtime.js & copy dist/angular-chrome-app/styles*.css ../extension/styles.css",
+    "copy:build": "cp dist/angular-chrome-app/main*.js ../extension/main.js & cp dist/angular-chrome-app/polyfills*.js ../extension/polyfills.js & cp dist/angular-chrome-app/runtime*.js ../extension/runtime.js & cp dist/angular-chrome-app/styles*.css ../extension/styles.css",
+    "copy-win:build": "robocopy dist/angular-chrome-app/ ../extension/ main*.js & robocopy dist/angular-chrome-app/ ../extension/ polyfills*.js & robocopy dist/angular-chrome-app/ ../extension/ runtime*.js & robocopy dist/angular-chrome-app/ ../extension/ styles*.css",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
